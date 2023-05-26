@@ -6,7 +6,7 @@ import { MdClear } from "react-icons/md";
 import { Context_data } from "@/context/context";
 import Navbar from "@/components/Navbar";
 import { DeleteAllCartProduct } from "@/actions/cartaction";
-import { checkout } from "../forstripe/checkout";
+import { checkout } from "../../components/checkout";
 
 const CartPage = () => {
   const {

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { checkout } from "./checkout";
+import { checkout } from "../../components/checkout";
 import { Context_data } from "@/context/context";
 
 function Stripee() {
