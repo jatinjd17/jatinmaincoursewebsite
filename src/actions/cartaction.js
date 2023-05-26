@@ -5,18 +5,21 @@ export const AddtoCart = (email, coursedata) => {
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/addcoursestouser`, {
   // return fetch(`https://flask-sandy.vercel.app/addcoursestouser`, {
-  return fetch(`/api/addcoursestouser`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    // body: JSON.stringify(formdata),
-    // body: formdata,
-    // body: JSON.stringify(token),
-    body: JSON.stringify({ email: email, coursedata: coursedata }),
-    // body: token,
-  })
+  return fetch(
+    `https://jatinmaincoursewebsite.vercel.app/api/addcoursestouser`,
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify(formdata),
+      // body: formdata,
+      // body: JSON.stringify(token),
+      body: JSON.stringify({ email: email, coursedata: coursedata }),
+      // body: token,
+    }
+  )
     .then((data) => {
       return data.json();
     })
@@ -32,18 +35,21 @@ export const DeleteCartProduct = (email, title) => {
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/deletecartproduct`, {
   // return fetch(`https://flask-sandy.vercel.app/deletecartproduct`, {
-  return fetch(`/api/deletecartproduct`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    // body: JSON.stringify(formdata),
-    // body: formdata,
-    // body: JSON.stringify(token),
-    body: JSON.stringify({ email: email, title: title }),
-    // body: token,
-  })
+  return fetch(
+    `https://jatinmaincoursewebsite.vercel.app/api/deletecartproduct`,
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify(formdata),
+      // body: formdata,
+      // body: JSON.stringify(token),
+      body: JSON.stringify({ email: email, title: title }),
+      // body: token,
+    }
+  )
     .then((data) => {
       return data.json();
     })
@@ -59,18 +65,21 @@ export const DeleteAllCartProduct = (email) => {
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/deleteallcartproduct`, {
   // return fetch(`https://flask-sandy.vercel.app/deleteallcartproduct`, {
-  return fetch(`/api/deleteallcartproduct`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    // body: JSON.stringify(formdata),
-    // body: formdata,
-    // body: JSON.stringify(token),
-    body: JSON.stringify({ email: email }),
-    // body: token,
-  })
+  return fetch(
+    `https://jatinmaincoursewebsite.vercel.app/api/deleteallcartproduct`,
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify(formdata),
+      // body: formdata,
+      // body: JSON.stringify(token),
+      body: JSON.stringify({ email: email }),
+      // body: token,
+    }
+  )
     .then((data) => {
       return data.json();
     })

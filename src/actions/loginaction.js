@@ -5,7 +5,7 @@ export const GoogleLogintoApi = (token) => {
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/googlelogin`, {
   // return fetch(`https://flask-sandy.vercel.app/googlelogin`, {
-  return fetch(`/api/googlelogin`, {
+  return fetch(`https://jatinmaincoursewebsite.vercel.app/api/googlelogin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -32,7 +32,7 @@ export const NormalLogin = (data) => {
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/normallogin`, {
   // return fetch(`https://flask-sandy.vercel.app/normallogin`, {
-  return fetch(`/api/normallogin`, {
+  return fetch(`https://jatinmaincoursewebsite.vercel.app/api/normallogin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -59,7 +59,7 @@ export const CreateAccount = (data) => {
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/createaccount`, {
   // return fetch(`https://flask-sandy.vercel.app/createaccount`, {
-  return fetch(`/api/createaccount`, {
+  return fetch(`https://jatinmaincoursewebsite.vercel.app/api/createaccount`, {
     method: "POST",
     headers: {
       Accept: "application/json",
