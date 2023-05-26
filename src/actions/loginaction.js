@@ -4,7 +4,7 @@ export const GoogleLogintoApi = (token) => {
 
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/googlelogin`, {
-  return fetch(`http://3.110.124.205:9000/googlelogin`, {
+  return fetch(`https://3.110.124.205:9000/googlelogin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -30,7 +30,7 @@ export const NormalLogin = (data) => {
 
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/normallogin`, {
-  return fetch(`http://3.110.124.205:9000/normallogin`, {
+  return fetch(`https://3.110.124.205:9000/normallogin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -56,7 +56,7 @@ export const CreateAccount = (data) => {
 
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/createaccount`, {
-  return fetch(`http://3.110.124.205:9000/createaccount`, {
+  return fetch(`https://3.110.124.205:9000/createaccount`, {
     method: "POST",
     headers: {
       Accept: "application/json",

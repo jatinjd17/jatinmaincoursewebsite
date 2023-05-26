@@ -4,7 +4,7 @@ export const AddtoCart = (email, coursedata) => {
 
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/addcoursestouser`, {
-  return fetch(`http://3.110.124.205:9000/addcoursestouser`, {
+  return fetch(`https://3.110.124.205:9000/addcoursestouser`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -30,7 +30,7 @@ export const DeleteCartProduct = (email, title) => {
 
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/deletecartproduct`, {
-  return fetch(`http://3.110.124.205:9000/deletecartproduct`, {
+  return fetch(`https://3.110.124.205:9000/deletecartproduct`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -56,7 +56,7 @@ export const DeleteAllCartProduct = (email) => {
 
   // return fetch(`http://192.168.29.231:8000/dd`, {
   // return fetch(`http://192.168.29.231:9000/deleteallcartproduct`, {
-  return fetch(`http://3.110.124.205:9000/deleteallcartproduct`, {
+  return fetch(`https://3.110.124.205:9000/deleteallcartproduct`, {
     method: "POST",
     headers: {
       Accept: "application/json",
