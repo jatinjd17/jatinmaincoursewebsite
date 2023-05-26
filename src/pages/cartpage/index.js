@@ -101,7 +101,7 @@ const CartPage = () => {
               <div className="cart-total">
                 <span className="d-block fs-18 fw-6">Total:</span>
                 <div className="cart-total-value fw-8">
-                  {sum.toFixed(2)}
+                  {sum?.toFixed(2)}
                   {/* ${total_amount.toFixed(2)} */}
                 </div>
                 <button
