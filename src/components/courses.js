@@ -20,6 +20,7 @@ function Courses(props) {
     rating_count,
     rating_star,
     category,
+    price_api,
   } = props;
   const router = useRouter();
   const {
@@ -121,6 +122,7 @@ function Courses(props) {
               const coursedata = {
                 title: course_name,
                 price: discounted_price,
+                price_api: price_api,
               };
               const email = Userinfo.email;
               AddtoCart(email, coursedata)

@@ -6,6 +6,7 @@ import { MdClear } from "react-icons/md";
 import { Context_data } from "@/context/context";
 import Navbar from "@/components/Navbar";
 import { DeleteAllCartProduct } from "@/actions/cartaction";
+import { checkout } from "../forstripe/checkout";
 
 const CartPage = () => {
   const {
@@ -23,6 +24,21 @@ const CartPage = () => {
   const sum = Userinfo?.cartcourses?.reduce((accumulator, object) => {
     return accumulator + object.price;
   }, 0);
+
+  let newdata = [];
+
+  const GetPriceApi = () => {
+    console.log("gggggggg");
+    Userinfo?.cartcourses?.map((course) => {
+      console.log(course.price_api);
+      const daa = {
+        price: course.price_api,
+        quantity: 1,
+      };
+      newdata.push(daa);
+    });
+  };
+
   //   const {
   //     cart: cartItems,
   //     total_items,
@@ -42,6 +58,7 @@ const CartPage = () => {
     <div>
       <Navbar />
       <CartWrapper>
+        {Userinfo ? GetPriceApi() : null}
         <div className="container">
           <div className="cart-pg-title">
             <h3>Shopping Cart</h3>
@@ -107,6 +124,11 @@ const CartPage = () => {
                 <button
                   type="button"
                   className="checkout-btn bg-purple text-white fw-6"
+                  onClick={() => {
+                    checkout({
+                      lineItems: newdata,
+                    });
+                  }}
                 >
                   Checkout
                 </button>
