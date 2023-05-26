@@ -7,7 +7,7 @@ export async function checkout({ lineItems }) {
     // const key = `${process.env.STRIPE_SECRET}`;
     // console.log(key);
     if (!stripePromise) {
-      stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_SECRET);
+      stripePromise = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_SECRET}`);
     }
     return stripePromise;
   };
