@@ -1,7 +1,7 @@
 const withVideos = require("next-videos");
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withVideos({
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
@@ -20,7 +20,7 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
   },
-};
+});
 
 module.exports = nextConfig;
-module.exports = withVideos();
+// module.exports = withVideos();
