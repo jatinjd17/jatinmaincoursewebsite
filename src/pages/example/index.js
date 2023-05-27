@@ -34,7 +34,7 @@ function Index() {
       <div>{JSON.stringify(Userinfo)}</div>
       {/* <div>{JSON.stringify(Userinfo?.cartcourses.length)}</div> */}
       <Navbar />
-      {/* <Main /> */}
+      <Main />
       <CourseList />
       {/* <div>
           <video autoPlay loop style={{ width: "500px", height: "500px" }}>
