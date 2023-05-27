@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import courses from "../utils/data";
 import { AuthContext } from "../context/authcontext";
@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import { AddtoCart } from "@/actions/cartaction";
+import { CircularProgress } from "@mui/material";
 
 function Courses(props) {
   const {
@@ -31,6 +32,8 @@ function Courses(props) {
     setCartlistinfo,
     cartlistinfo,
   } = useContext(Context_data);
+
+  const [isLoading, SetIsLoading] = useState(false);
 
   // const arr = fromDb || [];
 
@@ -119,6 +122,7 @@ function Courses(props) {
             // href="/cartpage"
             className="item-btn add-to-cart-btn"
             onClick={() => {
+              SetIsLoading(true);
               const coursedata = {
                 title: course_name,
                 price: discounted_price,
@@ -128,12 +132,14 @@ function Courses(props) {
               AddtoCart(email, coursedata)
                 .then((data) => {
                   console.log(data);
+                  SetIsLoading(false);
                   if (data.success) {
                     localStorage.setItem("userdata", JSON.stringify(data.data));
                     setUserinfo(data.data);
                   }
                 })
                 .catch((e) => {
+                  SetIsLoading(false);
                   console.log(e);
                 });
               // setCartlistinfo([
@@ -147,7 +153,13 @@ function Courses(props) {
               // localStorage.setItem("cartdata", data);
             }}
           >
-            Add to cart
+            {isLoading ? (
+              <div>
+                <CircularProgress size={24} thickness={7} />
+              </div>
+            ) : (
+              <div>Add to cart</div>
+            )}
           </div>
         )}
       </div>

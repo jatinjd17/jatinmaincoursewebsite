@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "nprogress/nprogress.css";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Context from "../context/context";
 import { GoogleOAuthProvider } from "@react-oauth/google";

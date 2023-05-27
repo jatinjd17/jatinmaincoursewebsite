@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 // import { useCartContext } from "../context/cart_context";
 import styled from "styled-components";
 import CartItem from "../../components/CartItem";
@@ -7,6 +7,7 @@ import { Context_data } from "@/context/context";
 import Navbar from "@/components/Navbar";
 import { DeleteAllCartProduct } from "@/actions/cartaction";
 import { checkout } from "../../components/checkout";
+import { CircularProgress } from "@mui/material";
 
 const CartPage = () => {
   const {
@@ -17,6 +18,8 @@ const CartPage = () => {
     cartlistinfo,
     setCartlistinfo,
   } = useContext(Context_data);
+
+  const [isLoading, SetIsLoading] = useState(false);
 
   // const sum = cartlistinfo?.reduce((accumulator, object) => {
   //   return accumulator + object.price;
@@ -76,15 +79,18 @@ const CartPage = () => {
                   className="cart-clear-btn flex fs-15 fw-6 text"
                   onClick={
                     () => {
+                      SetIsLoading(true);
                       const email = Userinfo?.email;
                       DeleteAllCartProduct(email).then((data) => {
                         if (data.success) {
+                          SetIsLoading(false);
                           localStorage.setItem(
                             "userdata",
                             JSON.stringify(data.data)
                           );
                           setUserinfo(data.data);
                         }
+                        SetIsLoading(false);
                       });
                     }
                     // {
@@ -92,7 +98,12 @@ const CartPage = () => {
                     // }
                   }
                 >
-                  <MdClear className="text-pink" />
+                  {isLoading ? (
+                    <CircularProgress size={15} />
+                  ) : (
+                    <MdClear className="text-pink" />
+                  )}
+
                   <span className="d-inline-block text-pink">Clear All</span>
                 </button>
               </div>

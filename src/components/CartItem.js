@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { FaTrashAlt } from "react-icons/fa";
 import { Context_data } from "@/context/context";
 import { DeleteCartProduct } from "@/actions/cartaction";
+import { CircularProgress } from "@mui/material";
 // import { useCartContext } from '../context/cart_context';
 
 const CartItem = ({ cartItem }) => {
@@ -15,6 +16,7 @@ const CartItem = ({ cartItem }) => {
     cartlistinfo,
   } = useContext(Context_data);
   // const {removeFromCart} = useCartContext();
+  const [isLoading, SetIsLoading] = useState(false);
 
   return (
     <CartItemWrapper className="grid">
@@ -34,15 +36,18 @@ const CartItem = ({ cartItem }) => {
           className="remove-btn fs-13 text-dark fw-6"
           onClick={
             () => {
+              SetIsLoading(true);
               console.log("delete trigger");
               const email = Userinfo?.email;
               const title = cartItem?.title;
               DeleteCartProduct(email, title).then((data) => {
                 if (data.success) {
+                  SetIsLoading(false);
                   console.log(data.data);
                   localStorage.setItem("userdata", JSON.stringify(data.data));
                   setUserinfo(data.data);
                 }
+                SetIsLoading(false);
               });
             }
 
@@ -53,7 +58,8 @@ const CartItem = ({ cartItem }) => {
             // )
           }
         >
-          Remove{" "}
+          {isLoading ? <CircularProgress size={15} /> : <div>Remove </div>}
+
           <span>
             <FaTrashAlt />
           </span>

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Context_data } from "@/context/context";
 import { IconContext } from "react-icons";
 import { useRouter } from "next/router";
+import Image from "next/image";
 // import { useSidebarContext } from '../context/sidebar_context';
 // import { useCartContext } from '../context/cart_context';
 
@@ -76,7 +77,22 @@ const Navbar = () => {
                 // className="sidebar-open-btn"
                 // onClick={() => openSidebar()}
               >
-                <CgProfile />
+                {Userinfo?.profilepic ? (
+                  <div>
+                    <Image
+                      class="rounded-full"
+                      alt="The guitarist in the concert."
+                      src={Userinfo?.profilepic}
+                      width={30}
+                      height={30}
+                      // layout="responsive"
+                    />
+                    {/* <Image src={image} width={200} height={200} /> */}
+                    {/* 'https://lh3.googleusercontent.com' */}
+                  </div>
+                ) : (
+                  <CgProfile />
+                )}
               </button>
             </IconContext.Provider>
           </div>
