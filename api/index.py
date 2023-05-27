@@ -62,7 +62,8 @@ def googlelogin():
             useremail = idinfo['email']
             userprofilepic = idinfo['picture']
             userpassword = 'googleauth'
-            userdata = {'email': useremail, 'profilepic': userprofilepic, 'password': userpassword}
+            cartcourses = []
+            userdata = {'email': useremail, 'profilepic': userprofilepic, 'password': userpassword, 'cartcourses': cartcourses}
             users.insert_one(userdata)
             
 
