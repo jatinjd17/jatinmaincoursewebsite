@@ -4,7 +4,8 @@ import React from "react";
 function Example() {
   return (
     <div>
-      <Main />
+      sss
+      {/* <Main /> */}
     </div>
   );
 }
