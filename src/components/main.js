@@ -5,15 +5,16 @@ const Main = () => {
   return (
     <CartWrapper>
       <div className="main">
+        sssssssssssss
         {/* <div className="overlay"></div> */}
-        <video
+        {/* <video
           //   style={{ width: "500px", height: "500px" }}
           //   src={require("src/assets/videoBg.mp4")}
           src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
           autoPlay
           loop
           muted
-        />
+        /> */}
         {/* <video src="src/assets/videoBg.mp4" autoPlay loop muted /> */}
         {/* <video autoPlay style={{ width: "500px", height: "500px" }}>
           <source src={require("src/assets/videoBg.mp4")} />
