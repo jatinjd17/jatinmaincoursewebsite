@@ -8,7 +8,8 @@ const Main = () => {
         {/* <div className="overlay"></div> */}
         <video
           //   style={{ width: "500px", height: "500px" }}
-          src={require("src/assets/videoBg.mp4")}
+          //   src={require("src/assets/videoBg.mp4")}
+          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
           autoPlay
           loop
           muted
