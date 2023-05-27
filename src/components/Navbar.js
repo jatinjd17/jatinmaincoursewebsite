@@ -51,7 +51,7 @@ const Navbar = () => {
               <MdShoppingCart />
               <span className="item-count-badge">
                 {/* {cartlistinfo.length} */}
-                {Userinfo?.cartcourses.length}
+                {Userinfo?.cartcourses ? Userinfo?.cartcourses?.length : null}
                 {/* {total_items} */}
               </span>
             </Link>
