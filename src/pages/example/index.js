@@ -6,6 +6,7 @@ import { Context_data } from "@/context/context";
 import React, { useContext } from "react";
 import Router from "next/router";
 import NProgress from "nprogress";
+import Main from "@/components/main";
 
 if (typeof window !== "undefined") {
   NProgress.configure({ showSpinner: true });
@@ -33,6 +34,7 @@ function Index() {
       <div>{JSON.stringify(Userinfo)}</div>
       {/* <div>{JSON.stringify(Userinfo?.cartcourses.length)}</div> */}
       <Navbar />
+      <Main />
       <CourseList />
       {/* <div>
           <video autoPlay loop style={{ width: "500px", height: "500px" }}>
